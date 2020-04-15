@@ -4,10 +4,10 @@ class lrucache:
         self.capacity = capacity
         self.cache_dict = OrderedDict()
 
-    def get(self,key):
-        pass
+    def get(self, key):
+       pass
 
-    def put(self, key, value):
+    def put(self,key,value):
         pass
 
     def get_cache(self):
