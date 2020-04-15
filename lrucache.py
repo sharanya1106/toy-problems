@@ -5,10 +5,17 @@ class lrucache:
         self.cache_dict = OrderedDict()
 
     def get(self, key):
-        pass
+        if key in self.cache_dict:
+            self.cache_dict.move_to_end(key)
+            return self.cache_dict[key]
+        else:
+            return -1
 
     def put(self,key,value):
-        pass
+        if self.get(key) == -1:
+            if len(self.cache_dict) >= self.capacity:
+                self.cache_dict.popitem(last=False)
+        self.cache_dict[key] = value
 
     def get_cache(self):
-        pass
+        return self.cache_dict
